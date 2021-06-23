@@ -117,11 +117,11 @@ music:
   enable: true
   title: #非吸底模式有效
     enable: true
-    show: 听听音乐
+    show: 好音乐
   autoHide: true    # hide automaticaly
-  server: tencent   #require	music platform: netease, tencent, kugou, xiami, baidu
+  server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
-  id: 1776127550     #require	song id / playlist id / album id / search keyword
+  id: 448270139     #require	song id / playlist id / album id / search keyword
   fixed: true       # 开启吸底模式
   autoplay: false   # 是否自动播放
   theme: '#42b983'
@@ -138,10 +138,10 @@ musics:
   enable: true
   title:          #非吸底模式有效
     enable: true
-    show: 听听音乐
-  server: tencent   #require music platform: netease, tencent, kugou, xiami, baidu
+    show: 好音乐
+  server: netease   #require music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
-  id: 1776127550     #require song id / playlist id / album id / search keyword
+  id: 448270139     #require song id / playlist id / album id / search keyword
   fixed: false      # 开启吸底模式
   autoplay: true   # 是否自动播放
   theme: '#42b983'
@@ -179,8 +179,8 @@ recommend:
 
 # Configure website favicon and LOGO
 # 配置网站favicon和网站LOGO
-favicon: https://s1.ax1x.com/2020/05/17/YR20js.jpg
-logo: https://s1.ax1x.com/2020/05/17/YRWsYT.png
+favicon: https://z3.ax1x.com/2021/06/23/Rno010.jpg
+logo: https://z3.ax1x.com/2021/06/23/RnTIGn.png
 
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.
@@ -390,8 +390,8 @@ livere:
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
   enable: true
-  appId: Ucrxxxxxxxxxxxxxxxx-xxxxsz
-  appKey: zPsLxxxxxxxxxxxxxxerLmd
+  appId: ddtVIC4ThKI0yrTwDDyVuOc5-gzGzoHsz
+  appKey: 1bMtJfRFBX4yyWtvkFjAQKBr
   notify: true
   verify: true
   visitor: true
@@ -400,7 +400,7 @@ valine:
   placeholder: '留下你的足迹..' # Comment Box placeholder
   background: /medias/comment_bg.png
   count: true
-  enableQQ: 16463223  # 改为自己的QQ号
+  enableQQ: 1587043136  # 改为自己的QQ号
   recordIP: true
   requiredFields: 
     - nick

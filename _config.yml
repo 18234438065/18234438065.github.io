@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Luckey
-subtitle: 'Luckeyの博客'
+title: Moyu
+subtitle: 'Moyuの博客'
 description: '本科 | 计算机科学与技术 | 网络安全'
-keywords: 'luckyzmj 计算机 网络安全 渗透测试'
-author: Luckey
+keywords: 'Moyu 计算机 网络安全 渗透测试'
+author: Moyu
 language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://www.luckyzmj.cn
+url: http://www.cyle.work
 root: /
 # permalink: :year/:month/:day/:title/
 permalink: posts/:abbrlink.html  # p 是自定义的前缀
@@ -130,7 +130,7 @@ deploy:
 - type: 'git'
   repo: https://github.com/18234438065/18234438065.github.io.git
   branch: master
-- type: baidu_url_submitter
+#- type: baidu_url_submitter
 
 # baidu submit
 baidu_url_submit:

@@ -708,7 +708,7 @@
 <li><code>数据频繁更新缓存失效，维护开销耗费巨大</code></li>
 <li><code>缓存命中问题，sql必须一模一样</code>  </li>
 </ul>
-<h4>**二、查询优化思路**</h4>
+<h4>二、查询优化思路</h4>
 
 <ul>
 <li><code>分解sql 分解为小查询（降低表锁时间）</code> </li>
@@ -723,7 +723,7 @@
 5.尽可能的使用Notnull
 6.操作符优化，不使用不利于索引的操作符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4>**三、聚簇索引，普通索引**</h4>
+<h4>三、聚簇索引，普通索引</h4>
 
 <p><code>que</code><code>：谁可以形成聚簇索引?</code></p>
 <p><code>ans:</code><code>每张表的主键为默认的聚餐索引，如果没有主键那么第一个not null的unique列会被设置为聚簇索引，以上都没有的话，mysql会定义一个隐式的主键来作为聚簇索引</code></p>
@@ -731,7 +731,7 @@
 <p><code>que</code><code>：聚簇索引普通索引的区别?</code></p>
 <p><code>ans:</code>  <code>1.聚簇索引：索引结构的叶子节点保存了行数据   普通索引：索引结构的叶子节点指向了数据对应的位置，所以总是需要二次查找  2. 聚簇索引具有唯一性，因为索引直接绑定数据 </code></p>
 <hr>
-<h4>**四、innoDB与Myisam、Memory的区别**</h4>
+<h4>四、innoDB与Myisam、Memory的区别</h4>
 
 <p><img src="https://pics3.baidu.com/feed/63d9f2d3572c11df6ce63351c1a06ad6f703c21f.jpeg?token=e037dd0733366e733945ff970d1d8d5f&amp;s=88287C321F5A6C4354DD11DA0000C0B2" alt="img"></p>
 <p>Myisam  支持全文索引，在磁盘分三种文件存储（frm存储表的定义数据、Myd存放表具体记录的数据、Myi.B+树存储索引）</p>
@@ -783,7 +783,7 @@ myisam 俩个文件存储，关联加载<span aria-hidden="true" class="line-num
 <p>​    <code>索引覆盖（联合索引）</code></p>
 </li>
 </ol>
-<h4>**六、mysql主从，高可用，备份恢复**</h4>
+<h4>六、mysql主从，高可用，备份恢复</h4>
 
 <p><strong>主备延迟</strong></p>
 <ol>
@@ -822,7 +822,7 @@ myisam 俩个文件存储，关联加载<span aria-hidden="true" class="line-num
 <p><strong>主从复制原理以及配置</strong></p>
 <p>​        主库有操作之后，有一个线程向子库发送binlog数据，这时子库还有另一个线程会接收来自主库的binlog数据，并写入到中继日志中（relay log），然后子库再根据这个中继日志，再用一个线程去回放主库中进行过的操作</p>
 <p>​        详细配置： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/160889848">https://zhuanlan.zhihu.com/p/160889848</a></p>
-<h4>**七、事务原理特性，mvcc隔离级别，幻读**</h4>
+<h4>七、事务原理特性，mvcc隔离级别，幻读</h4>
 
 <p>​        A(原子性  通过undolog进行回退)C(一致性 通过AID实现最终的一致性)I（隔离性 悲观锁  MVCC实现乐观锁）D（持久性innodb的redo log记录操作动作）</p>
 <p>​        行锁  使用唯一索引字段时  反之则是表锁</p>

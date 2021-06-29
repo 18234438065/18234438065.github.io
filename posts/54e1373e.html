@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Moyu 计算机 网络安全 渗透测试">
+    <meta name="keywords" content="Mysql, Moyu 计算机 网络安全 渗透测试">
     <meta name="description" content="本科 | 计算机科学与技术 | 网络安全">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Moyu</title>
+    <title>Mysql | Moyu</title>
 
     <link rel="icon" type="image/jpeg" href="https://z3.ax1x.com/2021/06/23/Rno010.jpg">
 
@@ -510,12 +510,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015642.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928021129.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">Mysql</h1>
                 </div>
             </div>
         </div>
@@ -634,12 +634,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Mysql/">
+                                <span class="chip bg-color">Mysql</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%9D%A2%E8%AF%95%E7%AF%87/" class="post-category">
+                                面试篇
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -648,28 +661,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-23
+                    2021-06-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-23
+                    2021-06-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -687,19 +700,112 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h3>Mysql</h3>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>一、mysql8.0查询缓存关闭</strong></p>
+<ul>
+<li><code>数据频繁更新缓存失效，维护开销耗费巨大</code></li>
+<li><code>缓存命中问题，sql必须一模一样</code>  </li>
+</ul>
+<p><strong>二、查询优化思路</strong></p>
+<ul>
+<li><code>分解sql 分解为小查询（降低表锁时间）</code> </li>
+<li><code>查询切分（类似分页查询）</code></li>
+<li><code>执行计划（使用Explain进行sql分析）</code></li>
+<li><code>遵守原则</code></li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">1.每张表设置ID主键
+2.避免使用Select *
+3.搜索字段建立索引
+4.join表的时候使用对应类型的列，并添加索引
+5.尽可能的使用Notnull
+6.操作符优化，不使用不利于索引的操作符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>三、聚簇索引，普通索引</strong></p>
+<p><code>que</code><code>：谁可以形成聚簇索引?</code></p>
+<p><code>ans:</code><code>每张表的主键为默认的聚餐索引，如果没有主键那么第一个not null的unique列会被设置为聚簇索引，以上都没有的话，mysql会定义一个隐式的主键来作为聚簇索引</code></p>
+<hr>
+<p><code>que</code><code>：聚簇索引普通索引的区别?</code></p>
+<p><code>ans:</code>  <code>1.聚簇索引：索引结构的叶子节点保存了行数据   普通索引：索引结构的叶子节点指向了数据对应的位置，所以总是需要二次查找  2. 聚簇索引具有唯一性，因为索引直接绑定数据 </code></p>
+<hr>
+<p><strong>四、innoDB与Myisam、Memory的区别</strong></p>
+<p><img src="https://pics3.baidu.com/feed/63d9f2d3572c11df6ce63351c1a06ad6f703c21f.jpeg?token=e037dd0733366e733945ff970d1d8d5f&amp;s=88287C321F5A6C4354DD11DA0000C0B2" alt="img"></p>
+<p>Myisam  支持全文索引，在磁盘分三种文件存储（frm存储表的定义数据、Myd存放表具体记录的数据、Myi.B+树存储索引）</p>
+<p>InnoDB  默认的存储库引擎</p>
+<ul>
+<li>支持主键 auto_increment</li>
+<li>支持事务，默认事务隔离级别为可重复读</li>
+<li>行级锁，支持更高的并发</li>
+<li>外键约束，降低查询效率，提高耦合度</li>
+<li>配合工具使用可以实现在线热备份</li>
+<li>缓存管理（8.0版本后取消）</li>
+<li>存储表和索引的存储方式  （1）聚簇存储，都位于B+树的叶子节点上（2）共享表空间存储（3）多表空间存储</li>
+</ul>
+<p>Memory </p>
+<ul>
+<li>数据放在内存   不支持text blob 不支持varchar  </li>
+<li>表级锁，并发访问效果差</li>
+<li>数据放在内存，服务器故障，难以恢复</li>
+<li>默认使用hash索引</li>
+<li>如果一个内部表很大，会转化为磁盘表。</li>
+<li>查询的时候，如果有用到临时表，而且临时表中有BLOB，TEXT类型的字段，那么这个临时表就会转化为MyISAM类型的表，性能会急剧降低；</li>
+</ul>
+<p><strong>五、索引结构，索引在业务中的运用，如何避免索引失效，回表</strong></p>
+<ol>
+<li><p>索引结构 </p>
+<pre class="line-numbers language-none"><code class="language-none">演变 ： 二叉排序树--自平痕二叉排序（AVL）--B树--B+树  （树高度以及查找次数）
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+B+树，数据存储在叶子节点，聚簇索引，普通索引二次查找相关
+myisam 俩个文件存储，关联加载<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>运用场景</p>
+<p>1、索引只建立在经常用到的条件字段中；</p>
+<p>2、并不是所有主键索引都需要设置自增，并且不是所有表都适合建立主键字段，例如中间表。</p>
+<p>3、并不是所有表都需要组合索引，这需要根据你的查询业务来进行关联（新手可以先建单列索引，业务完成后再建组合索引提高查询速度）</p>
+<p>4、join对称建立索引，例如：A表的ID建立了索引，那么B表的PID也应该建立索引 </p>
+</li>
+<li><p>避免索引失效 </p>
+<pre class="line-numbers language-none"><code class="language-none">- 列与列对比
+- 存在null值条件
+- 存在not条件
+- like通配符
+- 使用函数
+- 复合索引前导列区分大
+- 数据类型不匹配<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>4 .  回表</p>
+<p>​    <code>找到主键后通过聚簇索引找到相应数据行的过程叫做回表</code> </p>
+<p>​    <code>索引覆盖（联合索引）</code></p>
+</li>
+</ol>
+<p><strong>六、mysql主从，高可用，备份恢复</strong></p>
+<p><font size="2"><strong>主备延迟</strong></font></p>
+<p>双一模式（ 一个是innodb_flush_log_at_trx_commit，另外一个是sync_binlog ）  最多丢失一个事务io，数据安全性高，但是性能消耗严重</p>
+<p>双十一活动，磁盘io难以撑住流量压力时，切花非双一模式</p>
+<p>延迟的几大可能原因：</p>
+<ul>
+<li>备库配置低，性能相对主库要差</li>
+<li>备库压力大</li>
+<li>大事务（主库执行慢sql–从库）</li>
+</ul>
+<p>策略—可靠性优先</p>
+<ol>
+<li>判断备库B现在的seconds_behind_master，如果小于某个值（比如5秒）继续下一步，否则持续重试这一步；</li>
+<li>把主库A改成只读状态，即把readonly设置为true；</li>
+<li>判断备库B的seconds_behind_master的值，直到这个值变成0为止；</li>
+<li>把备库B改成可读写状态，也就是把readonly 设置为false；</li>
+<li>把业务请求切到备库B。</li>
+</ol>
+<p>策略—可用性优先（直接执行第四五步骤）</p>
+<p><strong>备份恢复</strong></p>
+<p>mysqldump 、lvm快照 、基于Xtrabackup进行MySQL备份</p>
+<p><strong>主从复制原理以及配置</strong></p>
+<p>主库有操作之后，有一个线程向子库发送binlog数据，这时子库还有另一个线程会接收来自主库的binlog数据，并写入到中继日志中（relay log），然后子库再根据这个中继日志，再用一个线程去回放主库中进行过的操作</p>
+<p>详细配置： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/160889848">https://zhuanlan.zhihu.com/p/160889848</a></p>
+<p><strong>七、事务原理特性，mvcc隔离级别，幻读</strong></p>
+<p>A(原子性  通过undolog进行回退)C(一致性 通过AID实现最终的一致性)I（隔离性 悲观锁  MVCC实现乐观锁）D（持久性innodb的redo log记录操作动作）</p>
+<p>行锁  使用唯一索引字段时  反之则是表锁</p>
+<p>MVCC 多版本并发控制</p>
 
                 
             </div>
@@ -726,7 +832,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.cyle.work/posts/4a17b156.html">http://www.cyle.work/posts/4a17b156.html</a>
+                    <a href="http://www.cyle.work/posts/54e1373e.html">http://www.cyle.work/posts/54e1373e.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -763,7 +869,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Mysql/">
+                                    <span class="chip bg-color">Mysql</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1233,9 +1343,10 @@ new Valine({
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/54e1373e.html">
                     <div class="card-image">
@@ -1253,9 +1364,9 @@ new Valine({
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1268,6 +1379,7 @@ new Valine({
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1286,48 +1398,32 @@ new Valine({
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/d74d8b76.html">
+                <a href="/posts/4a17b156.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928013834.jpg" class="responsive-img" alt="LuckyBlog开源搭建教程">
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015642.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">LuckyBlog开源搭建教程</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            之前在B站上发布了个人博客的视频，播放量也破千了，有网友私聊也想要搭建一个这样的博客。经过一段时间的准备，现将博客LuckyBlog的源代码公布出来，大家只需要根据以下的步骤，即可快速搭建一个漂亮且完善的博客。
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E7%AF%87/" class="post-category">
-                                    博客篇
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Moyu
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo-blog-lucky/">
-                        <span class="chip bg-color">hexo-blog-lucky</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">博客搭建教程</span>
-                    </a>
-                    
                 </div>
                 
             </div>

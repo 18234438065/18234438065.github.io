@@ -702,12 +702,14 @@
             <div id="articleContent">
                 <h3>Mysql</h3>
 
-<p><strong>一、mysql8.0查询缓存关闭</strong></p>
+<h4><strong>一、mysql8.0查询缓存关闭</strong></h4>
+
 <ul>
 <li><code>数据频繁更新缓存失效，维护开销耗费巨大</code></li>
 <li><code>缓存命中问题，sql必须一模一样</code>  </li>
 </ul>
-<p><strong>二、查询优化思路</strong></p>
+<h4>**二、查询优化思路**</h4>
+
 <ul>
 <li><code>分解sql 分解为小查询（降低表锁时间）</code> </li>
 <li><code>查询切分（类似分页查询）</code></li>
@@ -721,14 +723,16 @@
 5.尽可能的使用Notnull
 6.操作符优化，不使用不利于索引的操作符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>三、聚簇索引，普通索引</strong></p>
+<h4>**三、聚簇索引，普通索引**</h4>
+
 <p><code>que</code><code>：谁可以形成聚簇索引?</code></p>
 <p><code>ans:</code><code>每张表的主键为默认的聚餐索引，如果没有主键那么第一个not null的unique列会被设置为聚簇索引，以上都没有的话，mysql会定义一个隐式的主键来作为聚簇索引</code></p>
 <hr>
 <p><code>que</code><code>：聚簇索引普通索引的区别?</code></p>
 <p><code>ans:</code>  <code>1.聚簇索引：索引结构的叶子节点保存了行数据   普通索引：索引结构的叶子节点指向了数据对应的位置，所以总是需要二次查找  2. 聚簇索引具有唯一性，因为索引直接绑定数据 </code></p>
 <hr>
-<p><strong>四、innoDB与Myisam、Memory的区别</strong></p>
+<h4>**四、innoDB与Myisam、Memory的区别**</h4>
+
 <p><img src="https://pics3.baidu.com/feed/63d9f2d3572c11df6ce63351c1a06ad6f703c21f.jpeg?token=e037dd0733366e733945ff970d1d8d5f&amp;s=88287C321F5A6C4354DD11DA0000C0B2" alt="img"></p>
 <p>Myisam  支持全文索引，在磁盘分三种文件存储（frm存储表的定义数据、Myd存放表具体记录的数据、Myi.B+树存储索引）</p>
 <p>InnoDB  默认的存储库引擎</p>
@@ -750,7 +754,8 @@
 <li>如果一个内部表很大，会转化为磁盘表。</li>
 <li>查询的时候，如果有用到临时表，而且临时表中有BLOB，TEXT类型的字段，那么这个临时表就会转化为MyISAM类型的表，性能会急剧降低；</li>
 </ul>
-<p><strong>五、索引结构，索引在业务中的运用，如何避免索引失效，回表</strong></p>
+<h4>**五、索引结构，索引在业务中的运用，如何避免索引失效，回表**</h4>
+
 <ol>
 <li><p>索引结构 </p>
 <pre class="line-numbers language-none"><code class="language-none">演变 ： 二叉排序树--自平痕二叉排序（AVL）--B树--B+树  （树高度以及查找次数）
@@ -778,34 +783,50 @@ myisam 俩个文件存储，关联加载<span aria-hidden="true" class="line-num
 <p>​    <code>索引覆盖（联合索引）</code></p>
 </li>
 </ol>
-<p><strong>六、mysql主从，高可用，备份恢复</strong></p>
-<p><font size="2"><strong>主备延迟</strong></font></p>
-<p>双一模式（ 一个是innodb_flush_log_at_trx_commit，另外一个是sync_binlog ）  最多丢失一个事务io，数据安全性高，但是性能消耗严重</p>
-<p>双十一活动，磁盘io难以撑住流量压力时，切花非双一模式</p>
-<p>延迟的几大可能原因：</p>
+<h4>**六、mysql主从，高可用，备份恢复**</h4>
+
+<p><strong>主备延迟</strong></p>
+<ol>
+<li><p>双一模式（ 一个是innodb_flush_log_at_trx_commit，另外一个是sync_binlog ）  最多丢失一个事务io，数据安全性高，但是性能消耗严重</p>
+</li>
+<li><p>双十一活动，磁盘io难以撑住流量压力时，切花非双一模式</p>
+</li>
+<li><p>延迟的几大可能原因：</p>
+</li>
+</ol>
 <ul>
 <li>备库配置低，性能相对主库要差</li>
 <li>备库压力大</li>
 <li>大事务（主库执行慢sql–从库）</li>
 </ul>
-<p>策略—可靠性优先</p>
-<ol>
-<li>判断备库B现在的seconds_behind_master，如果小于某个值（比如5秒）继续下一步，否则持续重试这一步；</li>
-<li>把主库A改成只读状态，即把readonly设置为true；</li>
-<li>判断备库B的seconds_behind_master的值，直到这个值变成0为止；</li>
-<li>把备库B改成可读写状态，也就是把readonly 设置为false；</li>
-<li>把业务请求切到备库B。</li>
+<ol start="4">
+<li>策略—可靠性优先</li>
 </ol>
-<p>策略—可用性优先（直接执行第四五步骤）</p>
+<ul>
+<li><p>判断备库B现在的seconds_behind_master，如果小于某个值（比如5秒）继续下一步，否则持续重试这一步；</p>
+</li>
+<li><p>把主库A改成只读状态，即把readonly设置为true；</p>
+</li>
+<li><p>判断备库B的seconds_behind_master的值，直到这个值变成0为止；</p>
+</li>
+<li><p>把备库B改成可读写状态，也就是把readonly 设置为false；</p>
+</li>
+<li><p>把业务请求切到备库B。</p>
+</li>
+</ul>
+<ol start="5">
+<li>策略—可用性优先（直接执行第四五步骤）</li>
+</ol>
 <p><strong>备份恢复</strong></p>
-<p>mysqldump 、lvm快照 、基于Xtrabackup进行MySQL备份</p>
+<pre><code>    mysqldump 、lvm快照 、基于Xtrabackup进行MySQL备份</code></pre>
 <p><strong>主从复制原理以及配置</strong></p>
-<p>主库有操作之后，有一个线程向子库发送binlog数据，这时子库还有另一个线程会接收来自主库的binlog数据，并写入到中继日志中（relay log），然后子库再根据这个中继日志，再用一个线程去回放主库中进行过的操作</p>
-<p>详细配置： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/160889848">https://zhuanlan.zhihu.com/p/160889848</a></p>
-<p><strong>七、事务原理特性，mvcc隔离级别，幻读</strong></p>
-<p>A(原子性  通过undolog进行回退)C(一致性 通过AID实现最终的一致性)I（隔离性 悲观锁  MVCC实现乐观锁）D（持久性innodb的redo log记录操作动作）</p>
-<p>行锁  使用唯一索引字段时  反之则是表锁</p>
-<p>MVCC 多版本并发控制</p>
+<p>​        主库有操作之后，有一个线程向子库发送binlog数据，这时子库还有另一个线程会接收来自主库的binlog数据，并写入到中继日志中（relay log），然后子库再根据这个中继日志，再用一个线程去回放主库中进行过的操作</p>
+<p>​        详细配置： <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/160889848">https://zhuanlan.zhihu.com/p/160889848</a></p>
+<h4>**七、事务原理特性，mvcc隔离级别，幻读**</h4>
+
+<p>​        A(原子性  通过undolog进行回退)C(一致性 通过AID实现最终的一致性)I（隔离性 悲观锁  MVCC实现乐观锁）D（持久性innodb的redo log记录操作动作）</p>
+<p>​        行锁  使用唯一索引字段时  反之则是表锁</p>
+<p>​        MVCC 多版本并发控制</p>
 
                 
             </div>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.cyle.work/posts/19d2a4e6.html</loc>
+    
+    <lastmod>2021-06-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.cyle.work/posts/4a17b156.html</loc>
     
     <lastmod>2021-06-23</lastmod>
@@ -249,7 +256,7 @@
 
   <url>
     <loc>http://www.cyle.work/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -257,77 +264,84 @@
   
   <url>
     <loc>http://www.cyle.work/tags/Hexo/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/%E6%B8%B2%E6%9F%93%E7%BB%95%E8%BF%87/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/PicGo/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/GitHub%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/Github/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/hexo-blog-lucky/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/jQuery-CSS3/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/tags/%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.cyle.work/tags/Mysql/</loc>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -336,14 +350,21 @@
   
   <url>
     <loc>http://www.cyle.work/categories/%E5%8D%9A%E5%AE%A2%E7%AF%87/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.cyle.work/categories/%E5%89%8D%E7%AB%AF%E7%AF%87/</loc>
-    <lastmod>2021-06-28</lastmod>
+    <lastmod>2021-06-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.cyle.work/categories/%E9%9D%A2%E8%AF%95%E7%AF%87/</loc>
+    <lastmod>2021-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

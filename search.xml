@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>Redis</title>
+      <link href="posts/bae4ff13.html"/>
+      <url>posts/bae4ff13.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="posts/0.html"/>
+      <url>posts/0.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2>Redis</h2><h4>消息队列实现方案、作用以及优缺点</h4><p><code>作用：常用于解决并发系统中的资源一致性问题，提升峰值的处理能力，同时保证消息的顺序性、可恢复性、必送达性，对应用进行解耦，或者实现异步通讯等。</code></p><p><strong>实现方案</strong></p><ul><li><p>list  lpush Brpop</p><p><code>优点：实现简单，支持持久化，保证顺序，Rpush简单实现消息优先队列</code></p><p><code>缺点：ack认证比较麻烦，容易丢失，无法保证是否处理确认；不能做广播模式；不能重复消费；队列层不支持分组消费，</code></p></li><li><p>zset有序集合</p><p><code> zadd压入集合  zrangebyscore 根据score获取成员</code></p><p><code>优点： 可以自定义消息ID,有序队列</code></p><p><code>缺点：不允许重复消息（集合）</code></p></li><li><p>PUB/SUB</p><p><code>优点：典型的广播模式，对多；多信道，分组消费； 即时发送</code></p><p><code>缺点：必须保证客户端在线，否则消息丢失；不能保证每个消费者接收时间一致；消息积压会断开，导致意外丢失</code></p></li><li><p>Stream</p><p><code>这个Stream类型redis就是为了实现消息队列的。支持自动生成消息ID，分组消费，ACK，消息转移，队列监控等核心消息队列功能</code></p><p><code>推荐阅读:</code><a href="https://www.cnblogs.com/williamjie/p/11201654.html">https://www.cnblogs.com/williamjie/p/11201654.html</a></p></li></ul><h4>布隆过滤器​    <code>原理：通过hash算法将每个key的hash值分布到一个大的bit数组上，判断一个key是否存在时只需判断该的hash对应的bit位是否都是1，如果全是1则表示存在，否则不存在。</code><p></p></h4><h4>主从</h4><pre><code> 1. 主从模式  - `从服务器向主服务器申请快照RDB，  从 sync命令   主 bgsave`  - `master主服务缓存层在发送快照的时间，继续记录被执行的写命令，发送完毕后将缓存层的继续同步到slave从服务器`  - `支持全量，增量的自动同步`  - `非阻塞` 2. 哨兵模式  - `多哨兵监控模式`  - `发布订阅模式`  - `故障切换，主管下线、客观下线`  -- `难支持在线扩容，集群数量到达上限时，扩容复杂` 3. cluster模式（分布式集群）     - .Redis Cluster数据分区规则采用虚拟槽方式(16384个槽)，每个节点负责一部分槽和相关数据，实现数据和请求的负载均衡     - .搭建Redis Cluster划分四个步骤：准备节点，meet操作，分配槽，复制数据。     - .Redis官方推荐使用redis-trib.rb工具快速搭建Redis Cluster     - .集群伸缩通过在节点之间移动槽和相关数据实现         扩容时根据槽迁移计划把槽从源节点迁移到新节点         收缩时如果下线的节点有负责的槽需要迁移到其他节点，再通过cluster forget命令让集群内所有节点忘记被下线节点     - .使用smart客户端操作集群过到通信效率最大化，客户端内部负责计算维护键，槽以及节点的映射，用于快速定位到目标节点     - .集群自动故障转移过程分为故障发现和节点恢复。节点下线分为主观下线和客观下线，当超过半数节点认为故障节点为主观下线时，标记这个节点为客观下线状态。从节点负责对客观下线的主节点触发故障恢复流程，保证集群的可用性     - .开发运维常见问题包括：超大规模集群带席消耗，pub/sub广播问题，集群倾斜问题，单机和集群对比等</code></pre><h4>redis缓存问题</h4><ul><li><p>如何保证缓存一致性</p><ul><li>牺牲可用性，写请求串行化</li><li>先更新数据库，异步</li><li>扩展</li></ul></li><li><p>持久化  aof文件存储命令  rdb 快照  虚拟化存</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mysql</title>
       <link href="posts/54e1373e.html"/>
       <url>posts/54e1373e.html</url>

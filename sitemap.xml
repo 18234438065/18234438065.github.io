@@ -9,7 +9,7 @@
   </url>
   
   <url>
-    <loc>http://www.cyle.work/posts/0.html</loc>
+    <loc>http://www.cyle.work/posts/bae4ff13.html</loc>
     
     <lastmod>2021-07-13</lastmod>
     
@@ -291,6 +291,13 @@
   </url>
   
   <url>
+    <loc>http://www.cyle.work/tags/Mysql/</loc>
+    <lastmod>2021-07-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.cyle.work/tags/PicGo/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
@@ -299,6 +306,13 @@
   
   <url>
     <loc>http://www.cyle.work/tags/GitHub%E5%9B%BE%E5%BA%8A/</loc>
+    <lastmod>2021-07-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.cyle.work/tags/Redis/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -353,13 +367,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://www.cyle.work/tags/Mysql/</loc>
-    <lastmod>2021-07-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
@@ -370,14 +377,14 @@
   </url>
   
   <url>
-    <loc>http://www.cyle.work/categories/%E5%89%8D%E7%AB%AF%E7%AF%87/</loc>
+    <loc>http://www.cyle.work/categories/%E9%9D%A2%E8%AF%95%E7%AF%87/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.cyle.work/categories/%E9%9D%A2%E8%AF%95%E7%AF%87/</loc>
+    <loc>http://www.cyle.work/categories/%E5%89%8D%E7%AB%AF%E7%AF%87/</loc>
     <lastmod>2021-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
